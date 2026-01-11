@@ -47,9 +47,9 @@ A basic payload to list files is:
 
 ```
 If this returns output, command execution is confirmed.
-
+```
 ## Why spawnSync('ls -lah') Does Not Work
-
+```
 Using:
 ```
 spawnSync('ls -lah')

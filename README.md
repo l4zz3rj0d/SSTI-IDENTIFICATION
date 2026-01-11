@@ -61,11 +61,11 @@ does not work as expected because spawnSync does not split a single string into 
 spawnSync(command, [args], [options])
 ```
 
-### command: the executable to run (string)
+command: the executable to run (string)
 
-### args: an array of arguments
+args: an array of arguments
 
-### options: optional execution settings
+options: optional execution settings
 
 ## Correct Payload with Arguments
 

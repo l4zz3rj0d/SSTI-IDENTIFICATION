@@ -51,16 +51,15 @@ If this returns output, command execution is confirmed.
 ## Why spawnSync('ls -lah') Does Not Work
 ```
 Using:
-```
+
 spawnSync('ls -lah')
 
-```
 does not work as expected because spawnSync does not split a single string into a command and its arguments. Instead, it treats the entire string as the command name, which causes execution to fail.
 
 ## The correct function signature is:
-
+```
 spawnSync(command, [args], [options])
-
+```
 
 ### command: the executable to run (string)
 

